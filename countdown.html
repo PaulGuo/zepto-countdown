@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>淘宝旅行 - 周边游抢200元红包</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="apple-touch-icon-precomposed" href="http://a.tbcdn.cn/mw/s/hi/tbtouch/images/touch-icon.png" />
+    <link href="http://a.tbcdn.cn/mw/base/styles/tms_h5.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="http://a.tbcdn.cn/apps/et/trip-html5/common/core/zepto-1.0.1.js"></script>
+    <script type="text/javascript" src="http://a.tbcdn.cn/apps/et/trip-html5/common/core/juicer-min.js"></script>
+    <script type="text/javascript" src="./base.js"></script>
+    <script type="text/javascript" src="./countdown.js"></script>
+</head>
+<body>
+
+<div id="tbh5v0" class="content">
+    <div id="bodyCont" class="screen-wrap fullscreen">
+        <div class="J_days"></div>
+        <div class="J_hours"></div>
+        <div class="J_minutes"></div>
+        <div class="J_seconds"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    var timedown = new CountDown({
+        daysNode: $('.J_days'),
+        hoursNode: $('.J_hours'),
+        minutesNode: $('.J_minutes'),
+        secondsNode: $('.J_seconds'),
+        timeLeft: 100
+    });
+
+    timedown.start();
+    this.timedown = timedown;
+</script>
+
+</body>
+</html>

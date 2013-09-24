@@ -58,10 +58,10 @@
             // any callback you want to put when the countdown finishes
             if(time_left <= 0) {
                 this.end();
-                days.html(0);
-                hours.html(0);
-                minutes.html(0);
-                seconds.html(0);
+                days.html(this._fixNumber(0));
+                hours.html(this._fixNumber(0));
+                minutes.html(this._fixNumber(0));
+                seconds.html(this._fixNumber(0));
                 return;
             }
             
@@ -74,10 +74,10 @@
             m = Math.floor(time_left / 60);
             time_left -= m * 60;
             
-            days.html(d);
-            hours.html(h);
-            minutes.html(m);
-            seconds.html(Math.floor(time_left));
+            days.html(this._fixNumber(d));
+            hours.html(this._fixNumber(h));
+            minutes.html(this._fixNumber(m));
+            seconds.html(this._fixNumber(Math.floor(time_left)));
             this.set('timeLeft', this._timeleft() - 1);
         },
 
@@ -103,6 +103,16 @@
         _stop: function() {
             clearInterval(this.get('time_loop'));
             this.set('timeLeft', null);
+        },
+
+        _fixNumber: function(number) {
+            number = number.toString();
+
+            if(number.length === 1) {
+                return '0' + number;
+            }
+
+            return number;
         },
 
         start: function() {
